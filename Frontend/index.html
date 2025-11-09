@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniVault DApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>MiniVault</h1>
+        <button id="connectButton">Connect Wallet</button>
+        <p id="walletAddress"></p>
+      </header>
+
+      <!-- Deposit Card -->
+      <section class="card">
+        <h2>Deposit to Vault</h2>
+        <input type="number" id="depositAmount" placeholder="Amount in ETH" />
+        <button id="depositButton">Deposit</button>
+        <p id="depositStatus"></p>
+      </section>
+
+      <!-- Dashboard Card -->
+      <section class="card">
+        <h2>Your Vault Info</h2>
+        <p>Balance: <span id="userBalance">0</span> ETH</p>
+        <p>Lock Status: <span id="lockStatus">Unknown</span></p>
+        <p>Unlock Time: <span id="unlockTime">--</span></p>
+        <button id="refreshButton">Refresh Data</button>
+      </section>
+
+      <!-- Withdraw Card -->
+      <section class="card">
+        <h2>Withdraw from Vault</h2>
+        <input type="number" id="withdrawAmount" placeholder="Amount in ETH" />
+        <button id="withdrawButton">Withdraw</button>
+        <p id="withdrawStatus"></p>
+      </section>
+
+      <!-- Owner Card -->
+      <section class="card" id="ownerCard" style="display:none;">
+        <h2>Owner Dashboard</h2>
+        <p>Vault Balance: <span id="vaultBalance">0</span> ETH</p>
+        <p>Owner Address: <span id="ownerAddress"></span></p>
+      </section>
+    </div>
+
+    <footer>
+      <p>Built with love by Gbolahan • Powered by Sepolia</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

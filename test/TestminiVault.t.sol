@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.26;
-import {Test} from "forgestd";
+import {Test} from "forge-std/Test.sol";
 import {miniVault} from "../src/miniVault.sol";
 import {DeployMiniVault} from "../script/DeployMiniVault.s.sol";
 
-contract TestMinniVault is Test {
+contract TestMiniVault is Test {
     miniVault minivault;
 
     function setUp() external {
@@ -16,4 +16,6 @@ contract TestMinniVault is Test {
     function testOwnerIsMsgSender() external view {
         assertEq(minivault.getowner(), msg.sender);
     }
+
+    function testUserCanWithdrawMoreThanBalance() external view {}
 }
